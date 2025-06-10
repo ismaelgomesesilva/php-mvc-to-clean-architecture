@@ -1,12 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
+namespace Domain\Entities;
+
 class Category
 {
     private $id;
     private $name;
     private $description;
     private $products_count;
-    
+
     public function __construct($id = null, $name = null, $description = null)
     {
         $this->id = $id;
@@ -53,5 +57,4 @@ class Category
     {
         $this->products_count = $productsCount;
     }
-
 }

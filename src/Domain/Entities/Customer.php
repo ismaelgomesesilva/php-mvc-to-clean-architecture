@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+namespace Domain\Entities;
+
 class Customer
 {
     private $id;
@@ -53,5 +57,4 @@ class Customer
     {
         $this->total_purchase_amount = $total_purchase_amount;
     }
-
 }

@@ -1,4 +1,9 @@
 <?php
+
+declare(strict_types=1);
+
+namespace Domain\Entities;
+
 require_once('Customer.php');
 require_once('CustomerDAO.php');
 class Transaction
@@ -61,5 +66,4 @@ class Transaction
         $customerDAO = new CustomerDAO();
         return $customerDAO->select($this->customer_id)[0];
     }
-
 }
