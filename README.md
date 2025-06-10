@@ -1,53 +1,74 @@
-# Symplicity Brasil - PHP Developer test
+# Refactoring a PHP MVC System to Clean Architecture
 
-Hello, thanks for your interest in joining our team.
+This repository aims to demonstrate the refactoring of a traditional PHP application based on the MVC pattern into the Clean Architecture model, focusing on code organization, decoupling of responsibilities, and ease of maintenance.
 
-The purpose of this test is to verify your coding and architecture skills and evaluate your line of thought during the test.
+## 🧠 Purpose
 
-Try to work as you would on a regular day and narrate your intentions as you add or modify code.
+The goal of this project is to serve as a practical study of Clean Architecture applied to legacy PHP projects and also as a technical portfolio, demonstrating the ability to refactor existing code into a modern and sustainable standard.
 
-Searching Google is allowed.
+## 💡 What is Clean Architecture?
 
-> We strongly recommend you to use the one of the local environments indicated below to take this test, to prevent delays causes by issues with your local environment. 
+Clean Architecture, proposed by Robert C. Martin (Uncle Bob), seeks to organize code so that the business logic (domain rules) is isolated from frameworks, databases, user interfaces, or any external technologies.
 
-> We don't recommend using Docker or any other containerization tool to take this test.
+## 🔄 Refactoring Steps
 
-## Instructions
+This repository showcases the step-by-step transformation:
 
-- Clone this repository.
-- Import the store.sql file to database.
+1. 📦 Original code based on traditional MVC.
+2. 🔍 Identification of tightly coupled dependencies.
+3. 🧩 Separation of layers:
+   - Domain (Entities, Business Rules)
+   - Use Cases (Application)
+   - Interface Adapters (Controllers, Views, Gateways)
+   - Frameworks & Drivers (Infrastructure, Database, External Frameworks)
+4. 🧪 Introduction of automated tests.
+5. 💬 Documentation of architectural decisions.
 
-## Requirements:
+## 📁 Final Directory Structure
 
-You'll need:
-- Git
+```
+/src
+  /Domain
+    /Entities
+    /Repositories
+  /Application
+    /UseCases
+  /Infrastructure
+    /Persistence
+    /Framework
+  /Interface
+    /Controllers
+    /Views
+/public
+/tests
+```
+
+## 🚀 Technologies Used
+
+- PHP 8+
 - Composer
-- Working local MySQL server
-- Working local PHP 7.x server (the built in PHP server will do).
-#### Local environments out of the box:
-- XAMPP
-    - [Windows](https://www.apachefriends.org/xampp-files/7.4.27/xampp-windows-x64-7.4.27-2-VC15-installer.exe)
-    - [Linux](https://www.apachefriends.org/xampp-files/7.4.27/xampp-linux-x64-7.4.27-2-installer.run)	
-    - [MacOS](https://www.apachefriends.org/xampp-files/7.4.27/xampp-osx-7.4.27-2-installer.dmg)
-    - [Portable](https://portableapps.com/apps/development/xampp) (Windows Only, doesn't require installation)
-- [Laragon](https://laragon.org/download/) (Windows Only)
+- PHPUnit
+- (Optional) Slim Framework or Laravel (only in the outer layer)
 
-## Test Tasks:
+## 🧪 Tests
 
-- [ ] Display the total purchase amount on Customer's page.
+Tests are implemented with a focus on business rules (domain layer) and use cases. External layers (such as controllers and views) are tested only when necessary.
 
-- [ ] Fix broken filters on Customer's page.
+```bash
+composer install
+./vendor/bin/phpunit
+```
 
-- [ ] Implement feature to add a new category.
+## 📚 References
 
-- [ ] Display the category name in the product list.
+- [The Clean Architecture - Uncle Bob](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html)
+- [PHP Clean Architecture Example - Carlos Buenosvinos](https://github.com/carlosbuenosvinos/hexagonal-architecture)
+- [Domain-Driven Design - Eric Evans](https://domainlanguage.com)
 
-- [ ] Add to category listing the number of linked products in each.
+## 🙋‍♂️ About the Author
 
-- [ ] Ensure that a category can only be deleted if it has no linked products.
-
-- [ ] Ensure the operation to update the product.
+My name is Ismael Silva, I’m a PHP developer with over 16 years of experience. I created this project to learn, practice, and share knowledge with the community, as well as to demonstrate my technical skills to recruiters.
 
 ---
 
-Good luck!
+⭐ **Feel free to clone, study, or contribute!**
